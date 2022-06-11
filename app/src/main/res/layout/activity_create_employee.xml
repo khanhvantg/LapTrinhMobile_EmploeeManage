@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="13dp"
+    tools:context=".activity.CreateEmployeeActivity">
+    <ImageView
+        android:id="@+id/avatar_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/avatar_default"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/edt_manage_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="New Employee"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/edt_manage_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <LinearLayout
+            android:id="@+id/create_account_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/edt_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="FullName"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textSize="18sp" />
+            <LinearLayout
+                android:id="@+id/kind_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="40dp"
+                    android:gravity="center_vertical"
+                    android:text="Kind "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <RadioGroup
+                    android:id="@+id/rd_group_kind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/rd_kind_admin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:checked="false"
+                        android:text="Admin"
+                        android:textSize="18sp" />
+                    <RadioButton
+                        android:id="@+id/rd_kind_employee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Employee"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/employee_create_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:padding="5dp"
+                android:background="@drawable/order_id_custom_border"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="30dp"
+                        android:text="Birthday"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                    <ImageView
+                        android:id="@+id/btn_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:clickable="true"
+                        android:src="@android:drawable/ic_menu_my_calendar" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/position_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_vertical"
+                        android:text="Position "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                    <RadioGroup
+                        android:id="@+id/rd_group_position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rd_position_part_time"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:checked="true"
+                            android:hint="Part time"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/rd_position_full_time"
+                            android:layout_width="74dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:checked="false"
+                            android:hint="Full time"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                        <RadioButton
+                            android:id="@+id/rd_position_manager"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:hint="Manager"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                    </RadioGroup>
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/edt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"
+                    android:textSize="18sp" />
+                <LinearLayout
+                    android:id="@+id/gender_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="18dp"
+                        android:gravity="center_vertical"
+                        android:text="Sex "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                    <RadioGroup
+                        android:id="@+id/rd_group_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rd_gender_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:hint="Male"
+                            android:textColor="@color/black"
+                            android:layout_marginRight="20dp"
+                            android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/rd_position_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:checked="false"
+                            android:hint="Female"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </RadioGroup>
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/edt_identity_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Identity Number"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone"
+                android:textSize="18sp" />
+            <Button
+                android:id="@+id/btn_add_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Employee"
+                android:background="#C9E5F1"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
